@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sense_flutter/models/prediction/prediction.dart';
-import 'package:sense_flutter/models/resort/resort.dart';
 import 'package:sense_flutter/models/resort/resort_helper.dart';
 import 'package:sense_flutter/screens/home/widgets/home_card.dart';
-import 'package:sense_flutter/widgets/builder/future_use.dart';
 import 'package:sense_flutter/widgets/custom/custom_text.dart';
 import 'package:sense_flutter/widgets/loading_widget.dart';
 import 'package:sense_flutter/widgets/transparent_app_bar.dart';
@@ -30,6 +28,14 @@ class _SearchPageState extends State<SearchPage> {
   @override
   Widget build(BuildContext context) {
     final prediction = widget.prediction;
+    if (!prediction.isDetected) {
+      return Column(
+        children: [
+          const TransparentAppBar(),
+          Expanded(child: WrongWidget("No Detection Can Be Made!")),
+        ],
+      );
+    }
     return Column(
       children: [
         const TransparentAppBar(),
