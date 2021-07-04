@@ -26,8 +26,4 @@ class UserHelper extends BaseHTTPHelper {
     var data = {"email": email};
     return await post<bool>(endpoint: "check-user", json: jsonEncode(data));
   }
-
-  Future<String> updateDiseases(User user) async {
-    return await post<String>(endpoint: "update-diseases", json: user.toJSON());
-  }
 }

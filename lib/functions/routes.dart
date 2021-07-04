@@ -4,11 +4,15 @@ import 'package:sense_flutter/functions/enum_parser.dart';
 import 'package:sense_flutter/functions/loading_function.dart';
 import 'package:sense_flutter/interfaces/i_route_configuration.dart';
 import 'package:sense_flutter/screens/home/home_screen_route_configuration.dart';
+import 'package:sense_flutter/screens/introduction/introduction_screen_route_configuration.dart';
+import 'package:sense_flutter/screens/profile/profile_screen_route_configuration.dart';
 import 'package:sense_flutter/widgets/builder/future_use.dart';
 
 class Routes {
   static List<IRouteConfiguration> listRoute = [
     HomeScreenRouteConfiguration(),
+    IntroductionScreenRouteConfiguration(),
+    ProfileScreenRouteConfiguration(),
   ];
 
   static Future<T> pushAndRemoveUntil<T>(

@@ -44,22 +44,12 @@ class HomeScreen extends BaseScreenWithAppBar {
       elevation: 0,
       actions: [
         IconButton(
-          icon: Icon(FontAwesomeIcons.userCircle, color: Colors.black),
-          onPressed: () {},
+          icon: Icon(FontAwesomeIcons.solidUserCircle, color: Colors.black),
+          onPressed: () => Routes.push(context, PageName.Profile),
           tooltip: "Profile Screen",
         ),
       ],
     );
-  }
-
-  Future<void> predictWithCamera(BuildContext context) async {
-    File file = await ImagePickerHelper.openCameraWithoutCrop();
-    await processImage(context, file);
-  }
-
-  Future<void> predictWithGallery(BuildContext context) async {
-    File file = await ImagePickerHelper.openGalleryWithoutCrop();
-    await processImage(context, file);
   }
 
   Future<void> processImage(BuildContext context, File file) async {

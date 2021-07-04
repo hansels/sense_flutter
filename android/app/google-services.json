@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1042162578464",
+    "project_id": "hackathon-bncc-2021",
+    "storage_bucket": "hackathon-bncc-2021.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1042162578464:android:d05f7e376ee8c6f29bf845",
+        "android_client_info": {
+          "package_name": "com.sense.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1042162578464-569b1pfc1rihkfkfdspp3rrvblk00r3v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVeZrA9bXRGGbb8Lu4qFlW8k_ZQUcp9UY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1042162578464-569b1pfc1rihkfkfdspp3rrvblk00r3v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
