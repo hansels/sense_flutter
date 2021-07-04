@@ -18,10 +18,6 @@ import 'package:sense_flutter/widgets/builder/future_use.dart';
 import 'package:sense_flutter/widgets/custom/custom_text.dart';
 
 class HomeScreen extends StatefulWidget {
-  final File lostFile;
-
-  HomeScreen({this.lostFile});
-
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
@@ -43,7 +39,9 @@ class _HomeScreenState extends State<HomeScreen>
   }
 
   Future<bool> beforeScaffold(BuildContext context) async {
-    if (widget.lostFile != null) processImage(context, widget.lostFile);
+    File lostFile = await ImagePickerHelper.retrieveLostData();
+    if (lostFile != null) processImage(context, lostFile);
+
     return true;
   }
 

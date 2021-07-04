@@ -44,10 +44,6 @@ class MyApp extends StatelessWidget {
   }
 
   static Future<Widget> splashScreen(BuildContext context) async {
-    File lostFile = await ImagePickerHelper.retrieveLostData();
-    if (lostFile != null)
-      return DoubleBackFunction.use(child: HomeScreen(lostFile: lostFile));
-
     return DoubleBackFunction.use(child: IntroductionScreen());
   }
 }
