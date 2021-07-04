@@ -1,5 +1,7 @@
 enum PageName {
   Home,
   Introduction,
-  Profile,
+  Login,
+  Register,
+  Resort,
 }

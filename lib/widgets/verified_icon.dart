@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sense_flutter/statics/phoodto_icon.dart';
+import 'package:sense_flutter/statics/sense_icon.dart';
 
 class VerifiedIcon extends StatefulWidget {
   @override
@@ -11,7 +11,7 @@ class _VerifiedIconState extends State<VerifiedIcon> {
   Widget build(BuildContext context) {
     return Tooltip(
       message: "Verified",
-      child: PhoodtoIcon.miniIcon(
+      child: SenseIcon.miniIcon(
         Icons.verified_user,
         color: Colors.green,
       ),

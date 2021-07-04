@@ -24,7 +24,6 @@ class _StreamUseState<T> extends State<StreamUse<T>> {
     return StreamBuilder<T>(
       stream: stream,
       builder: (context, snapshot) {
-        if (!snapshot.hasData) return widget.widget ?? Container();
         return widget.builder(context, snapshot);
       },
     );

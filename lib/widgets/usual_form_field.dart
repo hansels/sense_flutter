@@ -79,7 +79,7 @@ class UsualFormField extends StatelessWidget {
           keyboardType: keyboardType ?? TextInputType.text,
           decoration: decoration ??
               InputDecoration(
-                border: OutlineInputBorder(),
+                border: const OutlineInputBorder(),
                 labelText: labelText ?? "",
                 hintText: hintText ?? "",
                 prefixIcon: prefixIcon,

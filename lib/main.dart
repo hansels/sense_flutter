@@ -1,7 +1,11 @@
+import 'dart:io';
+
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:sense_flutter/configs/configs.dart';
 import 'package:sense_flutter/functions/double_back_function.dart';
+import 'package:sense_flutter/functions/image_picker_helper.dart';
+import 'package:sense_flutter/screens/home/home_screen.dart';
 import 'package:sense_flutter/screens/introduction/introduction_screen.dart';
 import 'package:sense_flutter/widgets/custom/animated_splash/animated_splash.dart';
 
@@ -40,6 +44,9 @@ class MyApp extends StatelessWidget {
   }
 
   static Future<Widget> splashScreen(BuildContext context) async {
+    File lostFile = await ImagePickerHelper.retrieveLostData();
+    if (lostFile != null) return DoubleBackFunction.use(child: HomeScreen());
+
     return DoubleBackFunction.use(child: IntroductionScreen());
   }
 }

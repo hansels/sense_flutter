@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:sense_flutter/basics/screens/base_screen.dart';
-import 'package:sense_flutter/screens/profile/profile_page.dart';
+import 'package:sense_flutter/screens/register/register_page.dart';
 
-class ProfileScreen extends BaseScreen {
-  ProfileScreen() : super(scrollable: false, padding: EdgeInsets.zero);
+class RegisterScreen extends BaseScreen {
+  RegisterScreen() : super(padding: EdgeInsets.zero, scrollable: false);
 
   @override
   Widget content(BuildContext context) {
-    return ProfilePage();
+    return RegisterPage();
   }
 
   @override
