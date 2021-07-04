@@ -1,6 +1,5 @@
 enum PageName {
   Booking,
-  BookingDetail,
   BookingList,
   Home,
   Introduction,

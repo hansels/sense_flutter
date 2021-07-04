@@ -1,9 +1,11 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:indonesia/indonesia.dart';
 import 'package:sense_flutter/configs/configs.dart';
 import 'package:sense_flutter/functions/picture_factory.dart';
+import 'package:sense_flutter/functions/toast_helper.dart';
 import 'package:sense_flutter/models/resort/resort.dart';
 import 'package:sense_flutter/screens/resort/widgets/resort_amenities_tile.dart';
 import 'package:sense_flutter/screens/resort/widgets/resort_review_tile.dart';
@@ -22,11 +24,24 @@ class ResortPage extends StatefulWidget {
 
 class _ResortPageState extends State<ResortPage> {
   ScrollController _listViewController;
+  AudioCache _audioCache;
+  AudioPlayer _player;
+  bool toggleAudio;
 
   @override
   void initState() {
+    _audioCache = AudioCache(prefix: 'assets/audio/');
+    _player = AudioPlayer();
     _listViewController = ScrollController();
+    toggleAudio = false;
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    _player?.dispose();
+    _listViewController?.dispose();
+    super.dispose();
   }
 
   @override
@@ -227,7 +242,8 @@ class _ResortPageState extends State<ResortPage> {
                       Padding(
                         padding: const EdgeInsets.symmetric(vertical: 12.0),
                         child: LongRaisedButton(
-                          onPressed: () {},
+                          onPressed: () =>
+                              ToastHelper.show("Booking Success!", context),
                           child: CustomText(
                             "Book Now",
                             fontSize: 16,
@@ -243,6 +259,31 @@ class _ResortPageState extends State<ResortPage> {
           ),
         ),
         SafeArea(child: const BackButton(color: Colors.white70)),
+        Positioned(
+          right: 7.5,
+          top: 7.5,
+          child: SafeArea(
+            child: GestureDetector(
+              onTap: () async {
+                if (!toggleAudio) {
+                  _player = await _audioCache.play(
+                    "${resort.specialties[0]}.mp3",
+                    stayAwake: true,
+                    volume: 1.0,
+                  );
+                }
+
+                if (toggleAudio) _player?.stop();
+
+                toggleAudio = !toggleAudio;
+              },
+              child: CircleAvatar(
+                backgroundColor: Colors.black54,
+                child: Icon(Icons.volume_up, color: Colors.white),
+              ),
+            ),
+          ),
+        ),
       ],
     );
   }

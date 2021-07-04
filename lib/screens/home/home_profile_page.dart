@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:sense_flutter/enums/page_name.dart';
 import 'package:sense_flutter/functions/routes.dart';
 import 'package:sense_flutter/functions/token_version.dart';
 import 'package:sense_flutter/statics/sense_icon.dart';
@@ -60,6 +61,18 @@ class _HomeProfilePageState extends State<HomeProfilePage> {
                   ),
                 ),
                 const SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 5),
+                  child: Column(
+                    children: <Widget>[
+                      TitleButton(
+                        iconData: FontAwesomeIcons.book,
+                        title: "Booking Anda",
+                        onTap: () => Routes.push(context, PageName.BookingList),
+                      ),
+                    ],
+                  ),
+                ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 5),
                   child: Column(
