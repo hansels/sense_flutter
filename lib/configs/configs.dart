@@ -15,6 +15,18 @@ class Configs {
   static const dangerColor = Color.fromRGBO(217, 83, 79, 1);
   static const highlighterColor = Color.fromRGBO(254, 255, 126, 1);
 
+  static const colorAvatars = [
+    Color.fromRGBO(29, 155, 209, 1),
+    Color.fromRGBO(242, 199, 68, 1),
+    Color.fromRGBO(11, 76, 140, 1),
+    Color.fromRGBO(11, 212, 196, 1),
+    Color.fromRGBO(74, 21, 75, 1),
+    Color.fromRGBO(232, 145, 45, 1),
+    Color.fromRGBO(43, 172, 118, 1),
+    Color.fromRGBO(134, 134, 134, 1),
+    Color.fromRGBO(224, 30, 90, 1),
+  ];
+
   static const Color linkColor = Color(0XFF0000EE);
   static const String httpLink = "34.101.173.235:3001";
 

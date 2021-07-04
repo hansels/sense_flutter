@@ -3,18 +3,28 @@ import 'package:sense_flutter/enums/page_name.dart';
 import 'package:sense_flutter/functions/enum_parser.dart';
 import 'package:sense_flutter/functions/loading_function.dart';
 import 'package:sense_flutter/interfaces/i_route_configuration.dart';
+import 'package:sense_flutter/screens/booking/booking_screen_route_configuration.dart';
+import 'package:sense_flutter/screens/booking_detail/booking_detail_screen_route_configuration.dart';
+import 'package:sense_flutter/screens/booking_list/booking_list_screen_route_configuration.dart';
 import 'package:sense_flutter/screens/home/home_screen_route_configuration.dart';
 import 'package:sense_flutter/screens/introduction/introduction_screen_route_configuration.dart';
 import 'package:sense_flutter/screens/login/login_screen_route_configuration.dart';
 import 'package:sense_flutter/screens/register/register_screen_route_configuration.dart';
+import 'package:sense_flutter/screens/resort/resort_screen_route_configuration.dart';
+import 'package:sense_flutter/screens/search/search_screen_route_configuration.dart';
 import 'package:sense_flutter/widgets/builder/future_use.dart';
 
 class Routes {
   static List<IRouteConfiguration> listRoute = [
+    BookingScreenRouteConfiguration(),
+    BookingDetailScreenRouteConfiguration(),
+    BookingListScreenRouteConfiguration(),
     HomeScreenRouteConfiguration(),
     IntroductionScreenRouteConfiguration(),
     LoginScreenRouteConfiguration(),
     RegisterScreenRouteConfiguration(),
+    ResortScreenRouteConfiguration(),
+    SearchScreenRouteConfiguration(),
   ];
 
   static Future<T> pushAndRemoveUntil<T>(

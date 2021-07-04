@@ -5,8 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 import 'package:keyboard_dismisser/keyboard_dismisser.dart';
 import 'package:sense_flutter/configs/configs.dart';
+import 'package:sense_flutter/enums/page_name.dart';
 import 'package:sense_flutter/functions/image_picker_helper.dart';
 import 'package:sense_flutter/functions/loading_function.dart';
+import 'package:sense_flutter/functions/routes.dart';
 import 'package:sense_flutter/functions/toast_helper.dart';
 import 'package:sense_flutter/models/prediction/prediction.dart';
 import 'package:sense_flutter/models/prediction/prediction_helper.dart';
@@ -167,6 +169,12 @@ class _HomeScreenState extends State<HomeScreen>
       LoadingFunction.showLoadingDialog(context);
       Prediction prediction = await _predictionHelper.predict(file);
       LoadingFunction.closeLoadingDialog(context);
+
+      return Routes.push(
+        context,
+        PageName.Search,
+        arguments: {"prediction": prediction},
+      );
     } catch (err) {
       LoadingFunction.closeLoadingDialog(context);
       ToastHelper.showException(err.message, context);
